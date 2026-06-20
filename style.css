@@ -1,0 +1,945 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & RESET (تنسيقات أساسية عامة وتصفير الهوامش لكل الموقع)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b1a20;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================================================
+   2. VIDEO BACKGROUND (عزل وإعداد فيديو الغيوم المتحرك في الخلفية)
+   ========================================================================== */
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+}
+
+#skyBgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 26, 32, 0.45);
+    z-index: -1;
+}
+
+
+/* ==========================================================================
+   3. SKY HEADER & NAVIGATION (شريط القائمة العلوي الثابت وأزرار التحكم)
+   ========================================================================== */
+.sky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    z-index: 1000;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.sky-nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 12px;
+    transition: color 0.2s;
+}
+
+.sky-nav a:hover {
+    color: #5ebad9;
+}
+
+.divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+}
+
+.sky-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-store {
+    background: #ffffff;
+    color: #333333;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-store:hover {
+    transform: scale(1.05);
+}
+
+.btn-lang {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+/* ==========================================================================
+   4. SKY HERO SECTION (واجهة البطل الترحيبية وروابط تحميل المنصات)
+   ========================================================================== */
+.sky-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+}
+
+.sky-main-title {
+    font-size: 110px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.platform-container {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.platform-circle {
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #385966;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.platform-circle:hover {
+    transform: translateY(-5px);
+    background-color: #5ebad9;
+    color: #ffffff;
+}
+
+.download-now-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/*bjb
+
+
+/* ==========================================================================
+   5. COMMON SECTION STYLES (التنسيقات الزجاجية والمشتركة للأقسام الأساسية)
+   ========================================================================== */
+.sky-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.sections-transparent {
+    background: rgba(11, 26, 32, 0.65);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #a0c2cd;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+
+/* ==========================================================================
+   6. 7 REALMS SECTION (شبكة عرض وتنسيق كروت الممالك السبعة)
+   ========================================================================== */
+.realms-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.realm-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px 20px;
+    transition: transform 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.realm-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.realm-img-box {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.realm-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.realm-box:hover .realm-img-box img {
+    transform: scale(1.05);
+}
+
+.realm-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.realm-box p {
+    font-size: 13.5px;
+    color: #cbdad1;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   7. IN-GAME EVENTS SECTION (تم الإرجاع لوضع image_6.png الأصلي بالظبط)
+   ========================================================================== */
+.events-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    border-color: #5ebad9;
+    cursor: pointer;
+}
+
+.event-status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #a0c2cd;
+}
+
+.event-status.active {
+    background: #e74c3c;
+    color: #ffffff;
+}
+
+.event-img-box {
+    width: 100%;
+    height: 140px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.event-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 13.5px;
+    color: #cbdad1;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   🃏 STACKED-TO-FAN CARD CAROUSEL WITH RIGHT TEXT (تأثير المروحة المخفية والنص الجانبي)
+   ========================================================================== */
+
+/* الحاوية المشقوقة (تخلي المروحة يسار والنص يمين) */
+.community-split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 240px; /* مسافة مريحة بين المروحة والنص */
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+    padding: 0 30px;
+}
+
+/* 👈 تنسيق جانب الكاروسيل (اليسار) */
+.carousel-left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    perspective: 1000px; /* عمق ثلاثي الأبعاد للحركة */
+}
+
+/* حاوية الكروت المركزية */
+.card-carousel {
+    position: relative;
+    width: 220px;
+    height: 320px;
+}
+
+/* الستايل الأساسي للكروت (تبدأ مستفة فوق بعضها بالظبط كأنها كرت واحد!) */
+.carousel-card {
+    position: absolute;
+    width: 220px;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #162a31;
+    
+    /* 🎯 السحر هنايا: الكروت كلها متطابقة فوق بعضها في النص بالظبط */
+    transform: translateX(0) translateY(0) rotate(0deg);
+    transform-origin: bottom center; /* نقطة الارتكاز من الأسفل عشان تفتح مروحة */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s, border-color 0.3s;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* تضمن إن لقطات الشاشة تجي مسبوكة وماتتغفصش */
+}
+
+/* ترتيب ظهور الكروت الافتراضي (الكرت رقم 3 هو اللّي حيكون على الوجه فوقهم) */
+.card-1 { z-index: 1; }
+.card-2 { z-index: 2; }
+.card-3 { z-index: 3; } /* هذا اللّي باين في الواجهة */
+.card-4 { z-index: 2; }
+.card-5 { z-index: 1; }
+
+/* ==========================================================================
+   🔄 تأثير الـ Hover: لما يقرب الماوس من الكاروسيل تتفرع الكروت وتطلع المروحة فوراً
+   ========================================================================== */
+
+.card-carousel:hover .card-1 {
+    transform: translateX(-130px) translateY(15px) rotate(-22deg);
+}
+
+.card-carousel:hover .card-2 {
+    transform: translateX(-65px) translateY(5px) rotate(-11deg);
+}
+
+/* الكرت الأوسط يرتفع قليلاً للأعلى */
+.card-carousel:hover .card-3 {
+    transform: translateX(0) translateY(-10px) rotate(0deg);
+    z-index: 6; /* يركب فوقهم لما ينفردوا */
+}
+
+.card-carousel:hover .card-4 {
+    transform: translateX(65px) translateY(5px) rotate(11deg);
+}
+
+.card-carousel:hover .card-5 {
+    transform: translateX(130px) translateY(15px) rotate(22deg);
+}
+
+/* 🎯 حركة إضافية: الكرت اللّي يقف فوقه الماوس بالظبط يستقيم ويكبر شوية */
+.card-carousel:hover .card-1:hover { transform: translateX(-130px) translateY(-25px) rotate(0deg) scale(1.08); z-index: 10; }
+.card-carousel:hover .card-2:hover { transform: translateX(-65px) translateY(-25px) rotate(0deg) scale(1.08); z-index: 10; }
+.card-carousel:hover .card-3:hover { transform: translateX(0) translateY(-35px) rotate(0deg) scale(1.08); z-index: 10; }
+.card-carousel:hover .card-4:hover { transform: translateX(65px) translateY(-25px) rotate(0deg) scale(1.08); z-index: 10; }
+.card-carousel:hover .card-5:hover { transform: translateX(130px) translateY(-25px) rotate(0deg) scale(1.08); z-index: 10; }
+
+.carousel-card:hover {
+    border-color: #5ebad9;
+    box-shadow: 0 15px 35px rgba(94, 186, 217, 0.4);
+}
+
+/* ==========================================================================
+   👉 تنسيق جانب النص (اليمين)
+   ========================================================================== */
+.text-right-side {
+    flex: 1.2; /* يعطي النص مساحة أعرض ومريحة للقرّاء */
+    text-align: left; /* متناسق مع لغة الموقع الإنجليزية */
+    background: rgba(22, 42, 49, 0.45); /* نفس زجاج موقعك الفخم */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.text-right-side h3 {
+    color: #5ebad9; /* لونك التركوازي المعتمد */
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.text-right-side p {
+    color: #cbdad1;
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.text-right-side p:last-child {
+    margin-bottom: 0;
+    color: #a0c2cd; /* لون أخف شوية للسطر الأخير */
+    font-style: italic;
+}
+
+/* 📱 دعم الموبايل (علشان في الشاشات الصغيرة يجوا تحت بعض وتتلغى المروحة منعا لخروجها من الشاشة) */
+@media (max-width: 900px) {
+    .community-split-layout {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .carousel-left-side {
+        min-height: 350px;
+    }
+    .text-right-side {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   8. SKY SHOP SECTION (متجر المنتجات الزجاجي المطور بـ 5 أعمدة تفاعلية)
+   ========================================================================== */
+.sky-shop-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.shop-heading-text {
+    font-size: 15px;
+    color: #69828a;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.sky-shop-grid { 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.shop-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(94, 186, 217, 0.25);
+    border-color: #5ebad9;
+}
+
+.card-wishlist {
+    text-align: right;
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.card-wishlist:hover {
+    color: #e74c3c;
+}
+
+.card-img-box {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.card-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.shop-card:hover .card-img-box img {
+    transform: scale(1.1) translateY(-6px);
+}
+
+.product-title {
+    font-size: 14.5px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    min-height: 36px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 13px;
+    color: #a0c2cd;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.btn-star {
+    background: #5ebad9;
+    color: #ffffff;
+    border: none;
+    padding: 5px 24px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-star:hover {
+    background-color: #3e8ca6;
+}
+
+
+/* ==========================================================================
+   🔐 DYNAMIC SPLIT AUTH SECTION (تنسيق لوحة الدخول المتطورة)
+   ========================================================================== */
+
+#auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* الحاوية الرئيسية المقسومة */
+.auth-container {
+    display: flex;
+    width: 900px;
+    min-height: 500px;
+    background: rgba(22, 42, 49, 0.45); /* الزجاجي المعتمد في موقعك */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* 👈 الجانب الأيسر (الترحيب والأزرار) */
+.auth-welcome-side {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(22, 42, 49, 0.8), rgba(94, 186, 217, 0.25));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.welcome-content h2 {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(94, 186, 217, 0.5);
+}
+
+.welcome-content p {
+    color: #cbdad1;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* حاوية أزرار التحويل المضيئة */
+.auth-toggle-pill {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(10, 20, 24, 0.6);
+    padding: 8px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: #cbdad1;
+    padding: 10px 35px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* الزر النشط بألوان موقعك التركوازية المضيئة */
+.toggle-btn.active {
+    background: #5ebad9;
+    color: #162a31;
+    box-shadow: 0 0 15px rgba(94, 186, 217, 0.6);
+}
+
+/* 👉 الجانب الأيمن (الفورم المتغير) */
+.auth-form-side {
+    flex: 1.2;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* التحكم في ظهور واختفاء الفورمات بسلاسة */
+.auth-form {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+}
+
+.auth-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.form-title {
+    color: #5ebad9;
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* خانات الإدخال الفخمة */
+.auth-input-group {
+    margin-bottom: 20px;
+}
+
+.auth-input-group label {
+    display: block;
+    color: #a0c2cd;
+    font-size: 13px;
+    margin-bottom: 6px;
+    padding-left: 5px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    background: rgba(10, 20, 24, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: #5ebad9;
+    outline: none;
+    box-shadow: 0 0 10px rgba(94, 186, 217, 0.2);
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* الرابط والزر */
+.forgot-pass {
+    display: block;
+    text-align: right;
+    color: #a0c2cd;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    transition: color 0.3s;
+}
+
+.forgot-pass:hover {
+    color: #5ebad9;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: #5ebad9;
+    color: #162a31;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(94, 186, 217, 0.3);
+}
+
+.auth-submit-btn:hover {
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .auth-welcome-side {
+        padding: 30px;
+    }
+    .auth-toggle-pill {
+        flex-direction: row;
+    }
+    .auth-form-side {
+        padding: 30px;
+    }
+}
+
+
+/* ==========================================================================
+   10. SIDE CART PANEL (تنسيقات لوحة سلة التسوق الجانبية التفاعلية بالـ JS)
+   ========================================================================== */
+.side-cart-panel {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 360px;
+    height: 100%;
+    background: #ffffff;
+    color: #333333;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.side-cart-panel.open {
+    right: 0;
+}
+
+.side-cart-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close-panel {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.side-cart-content {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.empty-text {
+    text-align: center;
+    color: #aaa;
+    margin-top: 40px;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+}
+
+.side-cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 12px;
+    background: #5ebad9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1999;
+    display: none;
+}
+
+.panel-overlay.show {
+    display: block;
+}
+
+
+/* ==========================================================================
+   11. SKY FOOTER (تنسيق شريط الخاتمة النهائي المطور ومعلومات الإشراف)
+   ========================================================================== */
+.sky-footer {
+    background-color: #071317;
+    padding: 40px 6% 30px 6%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+    color: #a0c2cd;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-team {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-team span {
+    color: #5ebad9;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.footer-supervisor {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footer-supervisor span {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.footer-line {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.1), rgba(255,255,255,0));
+    margin-bottom: 20px;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: #5e7f8a;
+}
+/* لضمان ظهور أيقونة داخل الدائرة باللون الأبيض دائماً عند تمرير الماوس */
+.platform-circle:hover i {
+    color: #ffffff !important;
+}
+

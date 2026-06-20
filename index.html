@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky: Children of the Light | Official Fan Project</title>
+    <!-- ⬇️ استدعاء أيقونات FontAwesome وخطوط قوقل -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 🌟 مكتبة التنبيهات الفخمة SweetAlert2 🌟 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-bg-container">
+        <video autoplay muted loop playsinline id="skyBgVideo">
+            <source src="v4.MP4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <header class="sky-header">
+        <div class="sky-logo">
+            <span class="logo-text">Sky</span>
+        </div>
+        <nav class="sky-nav">
+            <a href="#hero">Home</a> <span class="divider">|</span>
+            <a href="#realms">Realms</a> <span class="divider">|</span>
+            <a href="#events">Events</a> <span class="divider">|</span>
+            <a href="#community">Players</a> <span class="divider">|</span>
+            <a href="#shop">Store</a>
+        </nav>
+        <div class="sky-actions">
+            <button class="btn-store" id="cartToggle">STORE (<span id="cartCount">0</span>)</button>
+        </div>
+    </header>
+
+    <section class="sky-hero" id="hero">
+        <div class="hero-center-content">
+            <h1 class="sky-main-title">Sky</h1> 
+            <div class="platform-container">
+                <a href="https://apps.apple.com/us/app/sky-children-of-the-light/id1462117269" target="_blank" class="platform-circle" title="Download for iOS / iPhone">
+                    <i class="fab fa-apple"></i>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.tgc.sky.android" target="_blank" class="platform-circle" title="Download for Android">
+                    <i class="fab fa-android"></i>
+                </a>
+                <a href="https://store.steampowered.com/app/2325290/Sky_Children_of_the_Light/" target="_blank" class="platform-circle" title="Download for PC (Steam)">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="https://www.nintendo.com/store/products/sky-children-of-the-light-switch/" target="_blank" class="platform-circle" title="Download for Nintendo Switch" style="display: inline-flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 22px; height: 22px; fill: currentColor;">
+                <path d="M0 124.2v263.6c0 36 21.4 67.8 52.6 82.5 14.1 6.7 29.4 10.2 44.8 10.2 24.5 0 48.6-8.7 67.8-24.6l32-26.6c20.3-16.9 32-41.5 32-67.5V149.7c0-26-11.7-50.6-32-67.5l-32-26.6C146 39.7 121.9 31 97.4 31c-15.4 0-30.7 3.5-44.8 10.2C21.4 55.9 0 87.8 0 124.2zm112.4 102.6c13.7 0 24.8 11.1 24.8 24.8l.1 12.8c0 13.7-11.1 24.8-24.8 24.8s-24.8-11.1-24.8-24.8v-12.8c0-13.7 11.1-24.8 24.8-24.8zm118.4-77.1v312.6c0 26 11.7 50.6 32 67.5l32 26.6c19.2 15.9 43.3 24.6 67.8 24.6 15.4 0 30.7-3.5 44.8-10.2 31.2-14.8 52.6-46.6 52.6-82.5V124.2c0-36-21.4-67.8-52.6-82.5-14.1-6.7-29.4-10.2-44.8-10.2-24.5 0-48.6 8.7-67.8 24.6l-32 26.6c-20.3 16.9-32 41.5-32 67.5zm104.8 141c13.7 0 24.8 11.1 24.8 24.8v12.8c0 13.7-11.1 24.8-24.8 24.8s-24.8-11.1-24.8-24.8l-.1-12.8c0-13.7 11.1-24.8 24.8-24.8z"/>
+          </svg>
+        </a>
+                <a href="https://store.playstation.com/en-us/concept/10002092" target="_blank" class="platform-circle" title="Download for PlayStation">
+                    <i class="fab fa-playstation"></i>
+                </a>
+            </div>
+            
+            <p class="download-now-text">Click an icon above to download on your platform</p>
+            
+        </div>
+    </section>
+
+    <section class="sky-section sections-transparent" id="realms">
+        <h2 class="section-title">Explore the 7 Realms</h2>
+        <p class="section-subtitle">Journey through unique landscapes filled with stars and spirits (Click images to view Wiki)</p>
+        
+        <div class="realms-grid-layout">
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Isle_of_Dawn" target="_blank">
+                        <img src="pac7.webp" alt="Isle of Dawn">
+                    </a>
+                </div>
+                <h3>1. Isle of Dawn</h3>
+                <p>The beginning of your awakening in a vast, quiet desert.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Daylight_Prairie" target="_blank">
+                        <img src="pac1.webp" alt="Daylight Prairie">
+                    </a>
+                </div>
+                <h3>2. Daylight Prairie</h3>
+                <p>A joyful, sunlit meadow full of social life and butterflies.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Hidden_Forest" target="_blank">
+                        <img src="pac2.webp" alt="Hidden Forest">
+                    </a>
+                </div>
+                <h3>3. Hidden Forest</h3>
+                <p>A rainy, mysterious woodland where your light is constantly tested.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Valley_of_Triumph" target="_blank">
+                        <img src="pac3.webp" alt="Valley of Triumph">
+                    </a>
+                </div>
+                <h3>4. Valley of Triumph</h3>
+                <p>An icy canyon dedicated to races, competition, and grand stadiums.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Golden_Wasteland" target="_blank">
+                        <img src="pac4.webp" alt="Golden Wasteland">
+                    </a>
+                </div>
+                <h3>5. Golden Wasteland</h3>
+                <p>A dangerous, dark territory guarded by the fearsome Dark Dragons.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Vault_of_Knowledge" target="_blank">
+                        <img src="pac5.webp" alt="Vault of Knowledge">
+                    </a>
+                </div>
+                <h3>6. Vault of Knowledge</h3>
+                <p>A multi-layered cosmic library holding the history and secrets of the stars.</p>
+            </div>
+            <div class="realm-box">
+                <div class="realm-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Eye_of_Eden" target="_blank">
+                        <img src="pac6.webp" alt="Eye of Eden">
+                    </a>
+                </div>
+                <h3>7. Eye of Eden</h3>
+                <p>The final, perilous peak where you sacrifice your light to save lost souls.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sky-section sections-transparent" id="events">
+        <h2 class="section-title">In-Game Events</h2>
+        <p class="section-subtitle">Don't miss the magical seasonal festivals happening right now (Click images to view Wiki)</p>
+        
+        <div class="events-timeline">
+            <div class="event-card">
+                <div class="event-status active">LIVE NOW</div>
+                <div class="event-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Days_of_Treasure" target="_blank">
+                        <img src="p1.webp" alt="This Month in Sky: May 2026 Edition">
+                    </a>
+                </div>
+                <h3>This Month in Sky: May 2026 Edition</h3>
+                <p>Days of Treasure has returned! Grab a shovel, join the spirits, and follow clues to uncover hidden treasure.
+                  Sky Kids can collect up to five Event Tickets per day by participating in the event, as well as finding fifteen Event Tickets scattered around Treasure Reef as one-time pickups.</p>
+            </div>
+            <div class="event-card">
+                <div class="event-status">UPCOMING</div>
+                <div class="event-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/In-Game_Events" target="_blank">
+                        <img src="p2.webp" alt="This Month in Sky: April 2026 Edition">
+                    </a>
+                </div>
+                <h3>This Month in Sky: April 2026 Edition</h3>
+                <p>The Wandering Carnival is arriving! Full of revelry and delight, this group of spirits is bringing a new set of Shared Space challenges and fun antics with them as their huge traveling carnival sails through the skies.
+                   These new challenges bring their own rewards completing other players Shared Space Challenges grants different amounts of Light based on how complex the creation is!</p>
+            </div>
+            <div class="event-card">
+                <div class="event-status">ANNUAL</div>
+                <div class="event-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom" target="_blank">
+                        <img src="p3.webp" alt="Sunshine Blossoms in Days of Bloom 2026">
+                    </a>
+                </div>
+                <h3>Sunshine Blossoms in Days of Bloom 2026</h3>
+                <p>Get ready to bask in the sunshine and frolic with friends in this years floral fête.</p>
+            </div>
+            <div class="event-card">
+                <div class="event-status">SPECIAL</div>
+                <div class="event-img-box">
+                    <a href="https://sky-children-of-the-light.fandom.com/wiki/Community_Events" target="_blank">
+                        <img src="p4.webp" alt="Submissions are Open for the 2026 Sky Creator Awards">
+                    </a>
+                </div>
+                <h3>Submissions are Open for the 2026 Sky Creator Awards</h3>
+                <p>t’s time, Sky Kids! Submissions for this year’s Sky Creator Awards are open!
+                   Whether you’re entering your own content or sharing the creations that have made you smile, get ready to see the Sky community shine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sky-section sections-transparent" id="community">
+        <h2 class="section-title">players</h2>
+        <p class="section-subtitle">Get to know some of the players characters </p>
+        
+        <div class="community-split-layout">
+            <div class="carousel-left-side">
+                <div class="card-carousel">
+                    <div class="carousel-card card-1"><img src="pac30.jpg" alt="Sky Snapshot 1"></div>
+                    <div class="carousel-card card-2"><img src="pac31.jpg" alt="Sky Snapshot 2"></div>
+                    <div class="carousel-card card-3"><img src="pac32.jpg" alt="Sky Snapshot 3"></div>
+                    <div class="carousel-card card-4"><img src="pac33.jpg" alt="Sky Snapshot 4"></div>
+                    <div class="carousel-card card-5"><img src="pac34.jpg" alt="Sky Snapshot 5"></div>
+                </div>
+            </div>
+            
+            <div class="text-right-side">
+                <h3>A brief summary</h3>
+                <p>Dressing up in the Kingdom of Sky is more than just customisation—it is a reflection of your soul's journey. This curated collection showcases some of the rarest seasonal garments and event cosmetics from the realms. From the adorable fluffy bunny hoods of festive celebrations to the elegant, regal robes of ancient seasons and vibrant celestial capes, each outfit tells a story of milestones achieved and memories made.</p>
+                <p>Hover over the magical deck on the left to unfold and reveal beautiful snapshots captured by our beloved children of the light.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sky-shop-section" id="shop">
+        <p class="shop-heading-text">Join hands with Sky and dream together!</p>
+        
+        <div class="sky-shop-grid">
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="p8.webp" alt="AI Love Sky Keychain">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">AI Love Sky Keychain</h4>
+                    <p class="product-price">$52.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="AI Love Sky Keychain" data-price="52.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="p9.webp" alt="AI Love Sky Purse">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">AI Love Sky Purse</h4>
+                    <p class="product-price">$35.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="AI Love Sky Purse" data-price="35.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="p10.webp" alt="Sky x AURORA Keychain">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Sky x AURORA Keychain</h4>
+                    <p class="product-price">$52.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Sky x AURORA Keychain" data-price="52.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="p11.webp" alt="Sky x AURORA Doll Plush Set">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Sky x AURORA Doll Plush Set</h4>
+                    <p class="product-price">$95.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Sky x AURORA Doll Plush Set" data-price="95.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac9.jpeg" alt="Le Petit Prince Plush Pin">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Dark Dragon Plush Keychain Charm - Special Edition</h4>
+                    <p class="product-price">$29.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Dark Dragon Plush Keychain Charm - Special Edition" data-price="29.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac10.jpeg" alt="Dark Dragon Krill Plush">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Sky x Aurora Doll Plush Set</h4>
+                    <p class="product-price">$45.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Sky x Aurora Doll Plush Set" data-price="45.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac11.jpeg" alt="Star Collector Golden Cape">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Star Collector Golden Cape</h4>
+                    <p class="product-price">$60.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Star Collector Golden Cape" data-price="60.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac12.jpeg" alt="4th Anniversary Box Combo">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">4th Anniversary Box Combo</h4>
+                    <p class="product-price">$120.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="4th Anniversary Box Combo" data-price="120.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac13.jpeg" alt="Light Manta Pool Float">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Light Manta Pool Float</h4>
+                    <p class="product-price">$38.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Light Manta Pool Float" data-price="38.00">STAR</button>
+                </div>
+            </div>
+            <div class="shop-card">
+                <div class="card-wishlist"><i class="far fa-heart"></i></div>
+                <div class="card-img-box">
+                    <img src="pac14.jpeg" alt="Healing Crab Plush Toy">
+                </div>
+                <div class="card-info">
+                    <h4 class="product-title">Healing Crab Plush Toy</h4>
+                    <p class="product-price">$32.00 USD</p>
+                    <button class="btn-star add-to-cart-trigger" data-name="Healing Crab Plush Toy" data-price="32.00">STAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="sky-section sections-transparent" id="auth-section">
+    <div class="auth-container">
+        <div class="auth-welcome-side">
+            <div class="welcome-content">
+                <h2>WELCOME!</h2>
+                <p>LOGIN and SIGN IN to securely access your account.</p>
+                <div class="auth-toggle-pill">
+                    <button class="toggle-btn active" id="btn-login" onclick="switchAuth('login')">LOGIN</button>
+                    <button class="toggle-btn" id="btn-signin" onclick="switchAuth('signin')">SIGN IN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-form-side">
+            <!-- 1️⃣ فورم تسجيل الدخول (Login) -->
+            <form id="form-login" class="auth-form active">
+                <h3 class="form-title">LOGIN</h3>
+                <div class="auth-input-group">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="example@gmail.com" required>
+                        <span class="input-icon">✉️</span>
+                    </div>
+                </div>
+                <div class="auth-input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" placeholder="••••••••" required>
+                        <span class="input-icon">🔒</span>
+                    </div>
+                </div>
+                <a href="#" class="forgot-pass" id="forgot-pass">Forgot Password?</a>
+                <button type="submit" class="auth-submit-btn">LOGIN</button>
+            </form>
+
+            <!-- 2️⃣ فورم إنشاء الحساب (Sign In) -->
+            <form id="form-signin" class="auth-form">
+                <h3 class="form-title">SIGN IN</h3>
+                <div class="auth-input-group">
+                    <label>Full Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Your Name" required>
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+                <div class="auth-input-group">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="example@gmail.com" required>
+                        <span class="input-icon">✉️</span>
+                    </div>
+                </div>
+                <div class="auth-input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" placeholder="••••••••" required>
+                        <span class="input-icon">🔒</span>
+                    </div>
+                </div>
+                <button type="submit" class="auth-submit-btn">CREATE ACCOUNT</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <div class="side-cart-panel" id="cartPanel">
+        <div class="side-cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="btn-close-panel" id="closeCart">&times;</button>
+        </div>
+        <div class="side-cart-content" id="cartContainer">
+            <p class="empty-text">Your cart is empty.</p>
+        </div>
+        <div class="side-cart-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <span id="totalPriceValue">$0.00</span>
+            </div>
+            <button id="checkoutBtn" class="btn-checkout">Checkout</button>
+        </div>
+    </div>
+    <div class="panel-overlay" id="cartOverlay"></div>
+
+    <!-- 🌟 الـ Footer المطور والمنظم بطريقة أكاديمية احترافية 🌟 -->
+    <footer class="sky-footer" style="padding: 40px 20px; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; color: #ffffff; font-family: 'Quicksand', sans-serif;">
+            
+            <!-- اسم الجامعة والبلد -->
+            <p class="footer-uni" style="font-size: 1.15rem; font-weight: 500; letter-spacing: 1px; margin-bottom: 12px; opacity: 0.95;">
+                الجامعة الليبية للعلوم الإنسانية والتطبيقية | ليبيا | طرابلس
+            </p>
+            
+            <!-- خط فاصل ناعم وانسيابي -->
+            <hr class="footer-line" style="border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent); margin: 15px auto; width: 50%;">
+            
+            <!-- أسماء الطالبات معدات المشروع -->
+            <p class="footer-team" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: #eef2f3;">
+                إعداد : <span style="border-bottom: 1px dashed rgba(255,255,255,0.4); padding-bottom: 2px;">فرح عبد الحميد الدرباك</span> & <span style="border-bottom: 1px dashed rgba(255,255,255,0.4); padding-bottom: 2px;">روسم جمال ابوحميرة</span>
+            </p>
+            
+            <!-- اسم الدكتور المشرف بلون ذهبي نجمي مميز -->
+            <p class="footer-supervisor" style="font-size: 1.05rem; font-weight: 500; color: rgba(255,255,255,0.85); margin-top: 12px;">
+                تحت إشراف الدكتور الفاضل: <span style="color: #ffcc00; font-weight: 700; text-shadow: 0 0 8px rgba(255,204,0,0.3);">Dr. نجم الدين الاسطى</span>
+            </p>
+            
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

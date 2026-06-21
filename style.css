@@ -943,3 +943,68 @@ body {
     color: #ffffff !important;
 }
 
+/* ----------------------------------------------------
+   تعديلات التجاوب للموبايل (Mobile Responsive)
+   ---------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. القائمة: جعلها متراصة بشكل أفضل */
+    .sky-header {
+        flex-direction: column !important;
+        padding: 15px !important;
+        gap: 15px;
+    }
+    .sky-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .divider { display: none; } /* إخفاء الخطوط الفاصلة في الموبايل لتقليل الزحمة */
+
+    /* 2. العنوان: تصغير الخط ليناسب الشاشات الصغيرة */
+    .sky-main-title {
+        font-size: 60px !important; /* كان 110 وهو ضخم جداً للموبايل */
+        margin-top: 50px;
+    }
+
+    /* 3. شبكة المنتجات: 2 عمود للموبايل */
+    .sky-shop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* 4. البطاقات (Realms & Events): صف واحد (عمودي) */
+    .realms-grid-layout, .events-timeline {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+    }
+
+    /* 5. قسم الدخول: تأكدي من العرض */
+    .auth-container {
+        flex-direction: column !important;
+        width: 95% !important;
+        margin: 0 auto;
+    }
+
+    /* 6. منع حدوث scroll أفقي (هام جداً) */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container, section {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* للموبايلات الصغيرة جداً (أقل من 480px) */
+@media screen and (max-width: 480px) {
+    .sky-shop-grid {
+        grid-template-columns: 1fr !important; /* عمود واحد فقط للموبايل الصغير جداً */
+    }
+    .sky-main-title {
+        font-size: 45px !important;
+    }
+}
